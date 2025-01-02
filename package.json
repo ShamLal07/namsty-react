@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.13.3"
+  },
+  "dependencies": {
+    "react-fontawesome": "^1.7.1"
   }
 }
