@@ -1,0 +1,18 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "this is react by sam ",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/ShamLal07/namsty-react.git)"
+  },
+  "author": "Sham Lal",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
