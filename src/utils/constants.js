@@ -1,0 +1,2 @@
+export const LOGO_URL = 
+               "https://static.vecteezy.com/system/resources/previews/006/735/689/large_2x/vintage-grilled-barbecue-logo-retro-bbq-fire-grill-food-and-restaurant-icon-red-fire-icon-free-vector.jpg"
