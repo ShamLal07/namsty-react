@@ -1,17 +1,41 @@
 import React from 'react';
-import '../src/output.css';
-import Body from './components/Body';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './output.css';
 import Header from './components/Header';
-import  Hero  from "./components/Hero";
+import Index from './components/Index';
+import About from './components/About';
+import Contact from './components/Contact';
 
-export default function App() {
+function AppLayout() {
     return (
         <React.StrictMode>
             <div>
-                <Header />
-                <Hero />
-                <Body />
+                <Index />
             </div>
         </React.StrictMode>
+    );
+}
+
+const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <AppLayout />,
+    },
+    {
+        path: "/about",
+        element: <About />,
+    },
+    {
+        path: "/contact",
+        element: <Contact />,
+    },
+]);
+
+export default function App() {
+    return (
+        <>
+            <Header />
+            <RouterProvider router={appRouter} />
+        </>
     );
 }

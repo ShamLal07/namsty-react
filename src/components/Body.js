@@ -4,7 +4,11 @@ import { RestaurantCard } from "./RestaurantCard";
 const Body = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
+<<<<<<< Updated upstream
     const [loading, setLoading] = useState(true);
+=======
+    const [searchTxt, setSearchTxt] = useState("");
+>>>>>>> Stashed changes
 
     useEffect(() => {
         fetchData();
@@ -41,8 +45,42 @@ const Body = () => {
 
     const resetProducts = () => {
         setFilteredProducts(allProducts);
+        setSearchTxt(""); // Clear the search field when resetting
     };
 
+<<<<<<< Updated upstream
+=======
+    const searchProduct = (e) => {
+        const searchValue = e.target.value;
+        setSearchTxt(searchValue);
+
+        if (searchValue.trim()) {
+            const filtered = allProducts.filter((product) =>
+                product.title.toLowerCase().includes(searchValue.toLowerCase())
+            );
+            setFilteredProducts(filtered);
+        } else {
+            setFilteredProducts(allProducts); // Reset to all products if the input is cleared
+        }
+    };
+
+    const filterSearch = () => {
+        if (!searchTxt.trim()) {
+            alert("Please enter a search Product.");
+            return;
+        }
+
+        const filtered = allProducts.filter((product) =>
+            product.title.toLowerCase().includes(searchTxt.toLowerCase())
+        );
+        setFilteredProducts(filtered);
+
+        if (filtered.length === 0) {
+            alert("No products found.");
+        }
+    };
+
+>>>>>>> Stashed changes
     return (
         <div className="body">
             <div className="filter m-5 text-center">
@@ -65,6 +103,24 @@ const Body = () => {
                     >
                         Reset All Products
                     </button>
+<<<<<<< Updated upstream
+=======
+                    <div className="search_btn flex items-center border-2 border-indigo-500 rounded-lg p-2 bg-white relative">
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            className="flex-grow px-4 py-2 text-gray-700 bg-transparent outline-none placeholder-gray-400"
+                            value={searchTxt}
+                            onChange={searchProduct}
+                        />
+                        <button
+                            className="text-white bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded-lg transition"
+                            onClick={filterSearch}
+                        >
+                            Search
+                        </button>
+                    </div>
+>>>>>>> Stashed changes
                 </div>
             </div>
             <div className="res-card-container max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between my-8 gap-4 px-5">

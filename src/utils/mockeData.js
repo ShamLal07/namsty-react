@@ -123,4 +123,5 @@ export const products = [
         price : 50 ,
         rating: 4.8,
     },
+
 ]
